@@ -1,0 +1,32 @@
+
+body {
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  font-family: 'Segoe UI', sans-serif;
+}
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.btn-primary, .btn-secondary {
+  transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+#loading {
+  display: none;
+  color: #007bff;
+  font-weight: bold;
+}
+#result {
+  font-size: 1.2rem;
+  color: green;
+}
+#error {
+  color: red;
+}
+table input {
+  font-size: 0.85rem;
+  padding: 6px;
+}

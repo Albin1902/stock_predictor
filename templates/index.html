@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Price Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom External CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="text-center mb-4">📈 Stock Price Predictor</h2>
+    <p class="text-center">Enter 60 days of stock data to predict the 61st day's closing price using our LSTM AI model.</p>
+
+    <div class="card shadow p-4 border border-secondary">
+      <div class="input-group mb-3 justify-content-center">
+        <input type="text" class="form-control w-25" placeholder="Enter Stock Ticker (e.g. AAPL)" id="stockSymbol">
+        <button class="btn btn-success" id="fetchBtn">📥 Fetch Stock Data</button>
+      </div>
+
+      <div class="text-center mb-3">
+        <button class="btn btn-secondary me-2" id="resetBtn">🔄 Reset Table</button>
+        <button class="btn btn-primary" id="predictBtn">🔍 Predict Closing Price</button>
+      </div>
+
+      <h5 class="text-center mb-3">📋 Stock Data Entry (Last 60 Days)</h5>
+      <div class="table-container">
+        <table class="table table-bordered table-striped" id="data-table">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Open</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Close</th>
+              <th>Volume</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="text-center mt-4">
+        <div id="loading">⏳ Predicting...</div>
+        <div id="result" class="mt-2"></div>
+        <div id="error" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JS Script -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
