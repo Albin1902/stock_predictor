@@ -1,0 +1,5 @@
+streamlit
+torch
+yfinance
+joblib
+scikit-learn
